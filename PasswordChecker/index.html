@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Passwort-Stärke Checker</title>
+</head>
+<body>
+<div class="card">
+    <h1>Passwort-Stärke prüfen</h1>
+    <p class="subtitle">
+        Tippe ein Passwort ein und sieh sofort, wie sicher es ist.
+    </p>
+
+    <label for="password">Passwort</label>
+    <div class="input-wrapper">
+        <input id="password" type="password" autocomplete="new-password" />
+    </div>
+
+    <div class="strength-label-row">
+        <span>Stärke</span>
+        <span id="strengthText" class="strength-text weak"></span>
+    </div>
+
+    <div class="progress-container">
+        <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <div class="hints">
+        Besser wird dein Passwort, wenn du:
+        <ul>
+            <li>mindestens 12 Zeichen verwendest</li>
+            <li>Groß- und Kleinbuchstaben mischst</li>
+            <li>Zahlen und Sonderzeichen einbaust</li>
+        </ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
