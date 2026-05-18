@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heute lernst du CSS-Positionierung</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #d6d8db;
+        }
+
+        /* === Leiste oben: sticky === */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            z-index: 100;
+        }
+
+        /* === Hauptinhalt === */
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: left;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+
+        /* === Schreibtisch-Box === */
+        .schreibtisch {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .schreibtisch h2 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .normal {
+            background-color: #cce5ff;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border-radius: 6px;
+        }
+
+        .verschoben {
+            position: relative;
+            left: 20px;
+            background-color: #f8d7da;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border-radius: 6px;
+        }
+
+        /* === Notiz-Zeile mit Post-it === */
+        .notiz-zeile {
+            position: relative;
+            border: 1px dashed #ccc;
+            padding: 40px 12px;
+            font-size: 0.65rem;
+            color: #555;
+            border-radius: 6px;
+        }
+
+        .postit {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            background-color: #f0a500;
+            color: #000000;
+            font-weight: bold;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+
+        /* === Scrollbarer Inhaltsbereich === */
+        .inhalt {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #444;
+            line-height: 2;
+        }
+
+
+
+        /* === Button unten rechts (fixed) === */
+        .chat-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #4a90d9;
+            color: #ffffff;
+            width: 55px;
+            height: 55px;
+            border: none;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Sticky Leiste oben -->
+<header>Heute lernst du CSS-Positionierung</header>
+
+<!-- Hauptinhalt -->
+<main>
+
+    <h1>Mein digitales Zimmer</h1>
+
+    <!-- Schreibtisch-Box -->
+    <div class="schreibtisch">
+        <h2>Schreibtisch</h2>
+
+        <div class="normal">Ich bin im normalen Dokumentfluss.</div>
+        <div class="verschoben">Ich bin leicht verschoben.</div>
+
+        <div class="notiz-zeile">
+            Hier hängt die Notiz an der Wand.
+            <span class="postit">Post-it</span>
+        </div>
+    </div>
+
+    <!-- Scrollbarer Inhaltsbereich -->
+    <div class="inhalt">
+        <p>Scroll nach unten, um fixed und sticky zu sehen.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+        <p>Wiederholung für mehr Höhe.</p>
+    </div>
+
+</main>
+
+<!-- Fixed Button unten rechts -->
+<button class="chat-button">Chat</button>
+
+</body>
+</html>
