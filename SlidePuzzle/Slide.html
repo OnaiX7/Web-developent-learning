@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SHIFT — Sliding Puzzle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<div class="bg-grain" aria-hidden="true"></div>
+<div class="bg-orb bg-orb--a" aria-hidden="true"></div>
+<div class="bg-orb bg-orb--b" aria-hidden="true"></div>
+
+<section id="start-screen" class="screen screen--start">
+    <div class="brand">
+        <span class="brand__mark">◧</span>
+        <span class="brand__name">SHIFT</span>
+    </div>
+
+    <h1 class="hero">
+        <span class="hero__line hero__line--1">Slide.</span>
+        <span class="hero__line hero__line--2">Shuffle.</span>
+        <span class="hero__line hero__line--3"><em>Solve.</em></span>
+    </h1>
+
+    <p class="tagline">A minimal sliding puzzle. Beat your best time.</p>
+
+    <div class="setup">
+        <div class="setup__group">
+            <label class="setup__label">Grid</label>
+            <div class="grid-picker" role="radiogroup" aria-label="Grid size">
+                <button class="grid-option" data-size="2" role="radio" aria-checked="false">
+                    <span class="grid-option__preview" data-cells="4"></span>
+                    <span class="grid-option__label">2×2</span>
+                    <span class="grid-option__diff">Warm-up</span>
+                </button>
+                <button class="grid-option" data-size="3" role="radio" aria-checked="false">
+                    <span class="grid-option__preview" data-cells="9"></span>
+                    <span class="grid-option__label">3×3</span>
+                    <span class="grid-option__diff">Easy</span>
+                </button>
+                <button class="grid-option is-selected" data-size="4" role="radio" aria-checked="true">
+                    <span class="grid-option__preview" data-cells="16"></span>
+                    <span class="grid-option__label">4×4</span>
+                    <span class="grid-option__diff">Classic</span>
+                </button>
+                <button class="grid-option" data-size="6" role="radio" aria-checked="false">
+                    <span class="grid-option__preview" data-cells="36"></span>
+                    <span class="grid-option__label">6×6</span>
+                    <span class="grid-option__diff">Hard</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="setup__group">
+            <label class="setup__label" for="image-url">Image URL</label>
+            <input type="text" id="image-url" class="setup__input" value="" placeholder="Leave empty for random">
+        </div>
+
+        <div class="setup__row">
+            <label class="toggle">
+                <input type="checkbox" id="debug-toggle">
+                <span class="toggle__track"><span class="toggle__thumb"></span></span>
+                <span class="toggle__label">Show numbers</span>
+            </label>
+        </div>
+
+        <button id="start-button" class="cta">
+            <span class="cta__text">Start Game</span>
+            <span class="cta__arrow">→</span>
+        </button>
+
+        <div id="best-times" class="best-times"></div>
+    </div>
+</section>
+
+<section id="game-screen" class="screen screen--game" hidden>
+    <header class="hud">
+        <button id="back-button" class="hud__back" aria-label="Back to menu">←</button>
+        <div class="hud__stat">
+            <span class="hud__stat-label">Time</span>
+            <span id="timer" class="hud__stat-value">00:00.0</span>
+        </div>
+        <div class="hud__stat">
+            <span class="hud__stat-label">Moves</span>
+            <span id="moves" class="hud__stat-value">0</span>
+        </div>
+        <div class="hud__stat hud__stat--best">
+            <span class="hud__stat-label">Best</span>
+            <span id="best-time" class="hud__stat-value">—</span>
+        </div>
+        <button id="restart-button" class="hud__icon" aria-label="Shuffle / restart">⟳</button>
+    </header>
+
+    <div class="stage">
+        <div id="puzzle-container" class="puzzle"></div>
+        <div id="preview" class="preview" aria-label="Image preview"></div>
+    </div>
+</section>
+
+<div id="win-overlay" class="win-overlay" hidden>
+    <canvas id="confetti" class="confetti"></canvas>
+    <div class="win-card">
+        <div class="win-card__badge" id="win-badge">Solved</div>
+        <h2 class="win-card__title">Beautiful.</h2>
+        <div class="win-card__stats">
+            <div class="win-stat">
+                <span class="win-stat__label">Time</span>
+                <span id="win-time" class="win-stat__value">00:00.0</span>
+            </div>
+            <div class="win-stat">
+                <span class="win-stat__label">Moves</span>
+                <span id="win-moves" class="win-stat__value">0</span>
+            </div>
+            <div class="win-stat">
+                <span class="win-stat__label">Grid</span>
+                <span id="win-grid" class="win-stat__value">—</span>
+            </div>
+        </div>
+        <div class="win-card__actions">
+            <button id="win-again" class="cta cta--ghost">Play again</button>
+            <button id="win-menu" class="cta">Menu</button>
+        </div>
+    </div>
+</div>
+
+<script src="Slide.js"></script>
+</body>
+</html>
