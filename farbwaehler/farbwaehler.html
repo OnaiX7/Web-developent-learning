@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Farbwähler</title>
+    <link rel="stylesheet" href="farbwaehler.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="card" id="card">
+    <h1>Mein Farbwähler</h1>
+
+    <div class="controls">
+        <input type="color" id="colorPicker" value="#5b4fcf">
+        <button onclick="saveColor()">Farbe speichern</button>
+    </div>
+
+    <div class="color-display">
+        <div class="color-swatch" id="colorSwatch"></div>
+        <div>
+            <div class="color-label">Aktuelle Farbe:</div>
+            <input type="text" id="colorDisplay" readonly value="#5b4fcf">
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast">✓ Farbe gespeichert</div>
+<script src="farbwaehler.js"></script>
+</body>
+</html>
