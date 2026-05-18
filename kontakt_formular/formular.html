@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktformular</title>
+    <link rel="icon" href="../assets/logo.jpg" type="image/icon type">
+    <link rel="stylesheet" href="formular.css">
+</head>
+<body>
+<div class="form-container">
+    <h1>Kontakt</h1>
+    <div class="form-grid">
+
+        <div class="form-field">
+            <label for="vorname">Vorname</label>
+            <input type="text" id="vorname" placeholder="Max">
+        </div>
+
+        <div class="form-field">
+            <label for="nachname">Nachname</label>
+            <input type="text" id="nachname" placeholder="Mustermann">
+        </div>
+
+        <div class="form-field full-width">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" placeholder="max@beispiel.de">
+        </div>
+
+        <div class="form-field full-width">
+            <label for="nachricht">Nachricht</label>
+            <textarea id="nachricht" placeholder="Ihre Nachricht..."></textarea>
+        </div>
+
+        <div class="form-field full-width">
+            <button class="btn-send" onclick="handleSend()">Senden</button>
+            <div class="success-msg" id="success">Ihre Nachricht wurde erfolgreich gesendet.</div>
+        </div>
+    </div>
+</div>
+<script src="formular.js"></script>
+</body>
+</html>
