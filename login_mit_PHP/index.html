@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$Title$</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form id="login-container">
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username"
+         autocomplete="username" required>
+
+  <label for="password">Passwort</label>
+  <input type="password" id="password" name="password"
+         autocomplete="current-password" required>
+
+  <button type="submit" id="login">Login</button>
+  <p>Noch keinen Account?
+    <button type="button" id="send-to-register" class="link-button">
+      hier registrieren
+    </button>
+  </p>
+</form>
+
+<form id="register-container" style="display:none">
+  <label for="reg-fullname">vollständiger Name</label>
+  <input type="text" id="reg-fullname" name="reg-fullname"
+         autocomplete="name" required>
+
+  <label for="reg-username">Username</label>
+  <input type="text" id="reg-username" name="reg-username"
+         autocomplete="username" required>
+
+  <label for="reg-password">Passwort</label>
+  <input type="password" id="reg-password" name="reg-password"
+         autocomplete="new-password" required>
+
+  <label for="reg-password2">Wiederholung Passwort</label>
+  <input type="password" id="reg-password2" name="reg-password2"
+         autocomplete="new-password" required>
+
+  <button type="submit" id="register-btn">Registrieren</button>
+  <p>Bereits registriert?
+    <button type="button" id="send-to-login" class="link-button">
+      hier einloggen
+    </button>
+  </p>
+</form>
+<script src="script.js"></script>
+</body>
+</html>
