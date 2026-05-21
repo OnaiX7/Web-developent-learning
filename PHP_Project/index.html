@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo-Liste 🚀</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Deine Todo-Liste</h1>
+    <!-- Add Form -->
+    <form id="addForm">
+        <input type="text" id="title" placeholder="Neue Aufgabe..." required>
+        <select id="priority">
+            <option value="high">Hoch 🔥</option>
+            <option value="medium">Mittel ↔️</option>
+            <option value="low">Niedrig 🔕</option>
+        </select>
+        <textarea id="description" placeholder="Beschreibung..."></textarea>
+        <button type="submit" id="addBtn">Hinzufügen +</button>
+    </form>
+    <!-- Task Liste -->
+    <table id="taskTable">
+        <thead><tr><th>ID</th><th>Aufgabe</th><th>Priorität</th><th>Status</th><th>Aktionen</th></tr></thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<!-- Edit Modal -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="editForm">
+            <input type="hidden" id="editId">
+            <input type="text" id="editTitle" required>
+            <select id="editPriority">
+                <option value="high">Hoch 🔥</option>
+                <option value="medium">Mittel</option>
+                <option value="low">Niedrig 😌</option>
+            </select>
+            <textarea id="editDescription"></textarea>
+            <select id="editStatus">
+                <option value="pending">Offen</option>
+                <option value="completed">Erledigt ✓</option>
+            </select>
+            <button type="submit">Speichern</button>
+        </form>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

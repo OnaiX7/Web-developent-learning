@@ -1,0 +1,233 @@
+/* Reset und Basis */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    padding: 30px;
+    backdrop-filter: blur(10px);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #4a5568;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Add Form */
+#addForm {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background: #f7fafc;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+#addForm input[type="text"], #addForm textarea, #addForm select {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+#addForm input:focus, #addForm select:focus, #addForm textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#addForm textarea { min-height: 80px; resize: vertical; }
+
+#addForm button {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#addForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(72, 187, 120, 0.3);
+}
+
+/* Tabelle */
+#taskTable {
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-collapse: collapse;
+}
+
+#taskTable thead {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+#taskTable th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+#taskTable td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#taskTable tbody tr {
+    transition: all 0.3s ease;
+}
+
+#taskTable tbody tr:hover {
+    background: #f7fafc;
+    transform: scale(1.01);
+}
+
+/* Prioritäten */
+.priority-high { color: #f56565; font-weight: bold; }
+.priority-medium { color: #ed8936; }
+.priority-low { color: #48bb78; }
+
+/* Buttons in Tabelle */
+#taskTable button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.edit-btn {
+    background: linear-gradient(135deg, #4299e1, #3182ce);
+    color: white;
+}
+
+.edit-btn:hover {
+    background: linear-gradient(135deg, #3182ce, #2b6cb0);
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #f56565, #e53e3e);
+    color: white;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #e53e3e, #c53030);
+    transform: translateY(-1px);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover { color: #000; }
+
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#editForm input, #editForm select, #editForm textarea {
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#editForm input:focus, #editForm select:focus, #editForm textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#editForm button {
+    background: linear-gradient(135deg, #ed8936, #dd6b20);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#editForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(237, 137, 54, 0.3);
+}
+
+/* Responsiv */
+@media (max-width: 768px) {
+    .container { padding: 20px; margin: 10px; }
+    #addForm { flex-direction: column; }
+    #taskTable { font-size: 14px; }
+    #taskTable th, #taskTable td { padding: 10px; }
+}
+
+/* Erledigte Tasks streichen */
+.status-completed { text-decoration: line-through; opacity: 0.7; }
